@@ -327,6 +327,10 @@ a {
   border-radius: 50%;
   justify-content: center;
   color: var(--light);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-link:hover,
 .icon-link:focus {
@@ -348,6 +352,9 @@ a {
   border: 1px solid #8e8f99;
   border-radius: 4px;
   color: #8e8f99;
+  transition-property: color, border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-link:hover,
@@ -397,6 +404,9 @@ a {
 .link {
   text-decoration: none;
   display: block;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link:hover,
 .link:focus {
@@ -432,12 +442,18 @@ a {
   border-radius: 50%;
   justify-content: center;
   color: var(--light);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-icon-media {
   width: 24px;
   height: 24px;
+
   fill: currentColor;
 }
+
 .footer-icon-link:hover,
 .footer-icon-link:focus {
   background-color: #31d0aa;
@@ -470,8 +486,13 @@ a {
   cursor: pointer;
   display: block;
   margin: auto;
+
   min-width: 169px;
   height: 56px;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus,
@@ -492,6 +513,10 @@ a {
   padding: 12px 24px;
   border: 1px solid var(--accent);
   border-radius: 4px;
+
+  transition-property: color, background-color, border, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-nav-portfolio:hover,
 .btn-nav-portfolio:focus {
@@ -540,6 +565,11 @@ a {
   row-gap: 48px;
   column-gap: 24px;
 }
+.link-portfolio {
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .link-portfolio:hover,
 .link-portfolio:focus {
@@ -547,10 +577,39 @@ a {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+.list-portfolio:hover .portfolio-overlay {
+  transform: translateY(0);
+}
+
+/* Overlay */
+.portfolio-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-overlay {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  background-color: var(--primary-brand);
+  height: 100%;
+  width: 100%;
+  padding: 40px 32px 0;
+
+  transform: translateY(100%);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-overlay-txt {
+  color: var(--light);
+}
+
 /* Modal Window */
 
 .backdrop {
-  display: none;
   position: fixed;
 
   top: 0;
@@ -560,7 +619,21 @@ a {
   height: 100%;
 
   background: rgba(46, 47, 66, 0.4);
+
+  visibility: visible;
+  opacity: 1;
+  pointer-events: initial;
+  transition-property: opacity, visibility;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .modal {
   position: absolute;
 
@@ -594,7 +667,15 @@ a {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--accent);
-}
-.modal-close-icon {
   fill: var(--dark);
+
+  transition-property: fill, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: var(--pressed-state);
+  fill: #fff;
 }
