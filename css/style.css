@@ -584,10 +584,10 @@ a {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-.link-portfolio:hover
-  .portfolio-overlay
-  .link-portfolio:focus
-  .portfolio-overlay {
+.link-portfolio:hover .portfolio-overlay {
+  transform: translateY(0);
+}
+.link-portfolio:focus .portfolio-overlay {
   transform: translateY(0);
 }
 
@@ -605,7 +605,7 @@ a {
   background-color: var(--primary-brand);
   height: 100%;
   width: 100%;
-  padding: 40px 32px 0;
+  padding: 40px 32px;
 
   transform: translateY(100%);
   transition-property: transform;
