@@ -584,7 +584,7 @@ a {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-.list-portfolio:hover .portfolio-overlay {
+.link-portfolio:hover .portfolio-overlay {
   transform: translateY(0);
 }
 
@@ -611,6 +611,10 @@ a {
 }
 
 .portfolio-overlay-txt {
+  font-size: 16px;
+  line-height: 24px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   color: var(--light);
 }
 
@@ -630,9 +634,7 @@ a {
   visibility: visible;
   opacity: 1;
   pointer-events: initial;
-  transition-property: opacity, visibility;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -667,6 +669,8 @@ a {
   align-items: center;
   justify-content: center;
 
+  cursor: pointer;
+
   padding: 0;
   right: 24px;
   top: 24px;
@@ -676,13 +680,16 @@ a {
   background-color: var(--accent);
   fill: var(--dark);
 
-  transition-property: fill, background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
   background-color: var(--pressed-state);
   fill: #fff;
+  border: none;
 }
