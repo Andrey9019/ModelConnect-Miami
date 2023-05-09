@@ -194,7 +194,7 @@ a {
   max-width: 496px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 48px;
+  margin-bottom: 48px;
 }
 
 /* section 2 */
@@ -476,8 +476,7 @@ a {
 
 /* style button */
 
-.hero-button,
-.hero-button-text {
+.hero-button {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.35;
